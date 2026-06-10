@@ -6,11 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Spinner
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.navigationevent.NavigationEventInput
 
 class AddGearActivity : AppCompatActivity() {
     private lateinit var itemName: EditText
@@ -35,8 +31,9 @@ class AddGearActivity : AppCompatActivity() {
 
         //category spinner
         val categories = arrayOf("Shelter", "Food", "Safety",)
-        val adapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, categories)
-        categorySpinner.adapter =adapter
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, categories)
+        val categorySpinner = null
+        categorySpinner.adapter = adapter
 
         saveBtn.setOnClickListener {
             saveGearItem()
@@ -47,9 +44,10 @@ class AddGearActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveGearItem() {
+    private fun saveGearItem(add: Any.(String) -> Unit) {
         val itemName = itemName.text.toString().trim()
-        val category = categorySpinner.selectedItem.toString()
+        val categorySpinner = null
+        val category = categorySpinner.toString()
         val quantity = quantity.text.toString().trim()
         val comments = comments.text.toString().trim()
 
