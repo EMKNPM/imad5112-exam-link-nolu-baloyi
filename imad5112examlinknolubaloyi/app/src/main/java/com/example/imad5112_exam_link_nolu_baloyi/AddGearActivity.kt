@@ -48,7 +48,7 @@ class AddGearActivity : AppCompatActivity() {
         val itemName = itemName.text.toString().trim()
         val categorySpinner = null
         val category = categorySpinner.toString()
-        val quantity = quantity.text.toString().trim()
+        val quantity: String = quantity.text.toString().trim()
         val comments = comments.text.toString().trim()
 
 
@@ -62,8 +62,7 @@ class AddGearActivity : AppCompatActivity() {
             Toast.makeText(this, "Please enter quantity", Toast.LENGTH_SHORT).show()
             return
         }
-        val quantity = quantity.toIntOrNull()
-        if(quantity == null || quantity <=0) {
+        if(quantity == null || quantity <= 0.toString()) {
             Toast.makeText(this, "Please enter valid quantity", Toast.LENGTH_SHORT).show()
             return
         }
