@@ -9,6 +9,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 //ST10478159 Noluthando Baloyi
 
+private fun Handler.postDelayed(function: () -> Unit) {
+   TODO("Not yet implemented")
+}
+
 class splash_activity : AppCompatActivity() {
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
@@ -18,7 +22,8 @@ class splash_activity : AppCompatActivity() {
 
       Handler(mainLooper).postDelayed({ val intent = Intent(this, MainActivity::class.java) })
       startActivity(intent)
-      finish(), 3000
+      finish()
+      (,3000)
 
    }
 }
