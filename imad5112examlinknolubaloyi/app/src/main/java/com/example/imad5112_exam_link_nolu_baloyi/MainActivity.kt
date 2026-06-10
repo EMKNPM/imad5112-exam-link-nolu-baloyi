@@ -53,22 +53,33 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
 
 
-                override fun onResume() {
+                fun onResume() {
                     super.onResume()
                     updateTotalItems()
 
                 }
-                private fun updatetotalItems() {
+                fun updatetotalItems() {
                     //using loop to calculate total items packed
                     var totalItems = 0
                     for (quantity in quantity) {
                         totalItems += quantity
                     }
-                    totalItems.text = "Total items Packed: $totalItems"
+                    totalItems.toString() = "Total items Packed: $totalItems"
                 }
             }
         }
 
 
+    }
+
+    private fun updateTotalItems() {
+        TODO("Not yet implemented")
+    }
+
+    companion object {
+        val comments: Any
+        val quantities: Any
+        val categories: Any
+        val itemNames: Any
     }
 }
