@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                     for (quantity in quantity) {
                         totalItems += quantity
                     }
-                    totalItems.toString() = "Total items Packed: $totalItems"
+                    "Total items Packed: $totalItems".also { totalItems.toString() = it }
                 }
             }
         }
@@ -78,8 +78,20 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         val comments: Any
+            get() {
+                TODO()
+            }
         val quantities: Any
+            get() {
+                TODO()
+            }
         val categories: Any
+            get() {
+                TODO()
+            }
         val itemNames: Any
+            get() {
+                TODO()
+            }
     }
 }
